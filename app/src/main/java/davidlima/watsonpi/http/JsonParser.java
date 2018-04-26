@@ -19,6 +19,7 @@ import davidlima.watsonpi.models.Trait;
 public class JsonParser {
 
     private static JsonParser jsonParser;
+    private static String jsonString;
 
     public final String wordCount;
     public final TreeSet<Trait> needsTS;
@@ -28,6 +29,7 @@ public class JsonParser {
     public final TreeMap<Float, String> characteristicsTS;
 
     private JsonParser(String json) {
+        jsonString = json;
         wordCount = getWordCount(json);
         needsTS = getNeedsTreeSet(json);
         valuesTS = getValuesTreeSet(json);
@@ -37,7 +39,7 @@ public class JsonParser {
     }
 
     public static JsonParser getInstance(String json) {
-        if (jsonParser == null) {
+        if (jsonParser == null || json.compareTo(jsonString) != 0) {
             jsonParser = new JsonParser(json);
         }
         return jsonParser;

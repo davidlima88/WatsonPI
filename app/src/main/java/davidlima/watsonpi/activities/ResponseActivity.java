@@ -65,8 +65,7 @@ public class ResponseActivity extends AppCompatActivity {
         bottomNavigation.setAccentColor(R.color.colorBottomNavigationAccent);
         bottomNavigation.setInactiveColor(R.color.colorBottomNavigationInactiveColored);
 
-        bottomNavigation.setColoredModeColors(Color.WHITE,
-                getResources().getColor(R.color.colorBottomNavigationSelectedBackground));
+        bottomNavigation.setColoredModeColors(Color.WHITE, Color.LTGRAY);
 
         bottomNavigation.setColored(true);
 

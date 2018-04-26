@@ -52,7 +52,7 @@ public class JsonPost extends AsyncTask<String, String, String> {
             conn.setRequestProperty("Authorization", "Basic YmFiZmQzYmYtY2EzNC00MGIwLWI5Y2QtODY3NzFmYzM0ODMyOnNFN3RIaE9KMzVzbg==");
             conn.setRequestProperty("Content-Type", "application/json");
             conn.setRequestProperty("charset", "utf-8");
-            conn.setRequestProperty("Content-Length", Integer.toString(json.length()));
+            conn.setRequestProperty("Content-Length", Integer.toString(json.getBytes().length));
             conn.setRequestProperty("Accept", "application/json");
             conn.setUseCaches(false);
         } catch (IOException e) {
